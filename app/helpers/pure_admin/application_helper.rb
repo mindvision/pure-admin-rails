@@ -9,4 +9,16 @@ module PureAdmin::ApplicationHelper
   def merge_html_classes(value1, value2)
     [value1, value2].flatten.compact
   end
+
+  # TODO: docs
+  def boolean_label(value)
+    return value if value.nil?
+
+    icon_class = 'fa'
+    icon_class << (value ? ' fa-check' : ' fa-times')
+    tag_class = 'tag'
+    tag_class << ' tag-green' if value
+
+    content_tag :span, content_tag(:i, '', class: icon_class), class: tag_class
+  end
 end

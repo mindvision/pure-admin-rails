@@ -1,21 +1,49 @@
-@import 'pure_admin/variables.css.scss';
-@import 'pure_admin/utilities.css.scss';
-@import 'pure_admin/shell.css.scss';
-@import 'pure_admin/main_menu.css.scss';
-@import 'pure_admin/side_menu.css.scss';
-@import 'pure_admin/forms.css.scss';
-@import 'pure_admin/portlets.css.scss';
-@import 'pure_admin/tables.css.scss';
-@import 'pure_admin/table_filters.css.scss';
-@import 'pure_admin/flash_messages.css.scss';
-@import 'pure_admin/pagination.css.scss';
-@import 'pure_admin/buttons.css.scss';
-@import 'pure_admin/details_panels.css.scss';
-@import 'pure_admin/breadcrumbs.css.scss';
-@import 'pure_admin/tags.css.scss';
-@import 'pure_admin/scopes.css.scss';
-@import 'pure_admin/auth.css.scss';
-@import 'pure_admin/modals.css.scss';
+@import 'pure_admin/variables';
+@import 'pure_admin_colours';
+@import 'pure_admin/utilities';
+@import 'pure_admin/shell';
+@import 'pure_admin/main_menu';
+@import 'pure_admin/side_menu';
+@import 'pure_admin/forms';
+@import 'pure_admin/portlets';
+@import 'pure_admin/tables';
+@import 'pure_admin/table_filters';
+@import 'pure_admin/flash_messages';
+@import 'pure_admin/pagination';
+@import 'pure_admin/buttons';
+@import 'pure_admin/details_panels';
+@import 'pure_admin/breadcrumbs';
+@import 'pure_admin/tags';
+@import 'pure_admin/scopes';
+@import 'pure_admin/auth';
+@import 'pure_admin/modals';
+@import 'pure_admin/dropdowns';
+@import 'pure_admin/tabs';
 
 // custom input css
-@import 'pure_admin/inputs/select.css.scss';
+@import 'pure_admin/inputs/select';
+
+// TODO find a place for this
+.padding-box {
+  padding: 0 $base-font-size;
+
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:last-of-type{
+    padding-left: 0;
+  }
+}
+
+.with-padding {
+  padding: 1em;
+
+  &.only-vertical {
+    padding: $base-font-size 0;
+  }
+
+  &.only-horizontal {
+    padding: 0 $base-font-size;
+  }
+}

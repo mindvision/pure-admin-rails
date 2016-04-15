@@ -46,6 +46,10 @@ $icon-minus: '\f068';
           -ms-transition: all 0.2s linear;
            -o-transition: all 0.2s linear;
               transition: all 0.2s linear;
+
+      * {
+        display: none;
+      }
     }
   }
 }
@@ -98,11 +102,34 @@ $icon-minus: '\f068';
   line-height: $base-font-size * 1.5;
   border-left: 1px solid $grey-medium-dark;
   padding: 0 $base-font-size * 0.8;
+  padding-right: 0;
   display: table-cell;
   vertical-align: middle;
+  white-space: nowrap;
+
+  .portlet-control-item {
+    @extend .clear-fix;
+    display: inline-block;
+    margin-right: $base-font-size * 0.8;
+
+    .pure-button,
+    .pure-menu-link {
+      font-size: 0.75rem;
+    }
+
+    .dropdown {
+      float: none;
+    }
+
+    .pure-menu-has-children {
+      display: block;
+    }
+  }
 }
 
 .portlet-indicator {
+  padding-right: $base-font-size * 0.8;
+
   &:hover {
     cursor: pointer;
   }
@@ -117,6 +144,8 @@ $icon-minus: '\f068';
   display: none;
   font-size: 14px;
   padding: 0 $base-font-size;
+  // TODO: keep this? use case is tables that can't shrink any further ie mobile screens
+  overflow-x: auto;
 
   &.vertically-padded {
     padding: 16px;

@@ -1,0 +1,65 @@
+.text-success {
+  color: $text-success;
+}
+
+.text-notice {
+  color: $text-notice;
+}
+
+.text-alert {
+  color: $text-alert;
+}
+
+.text-error {
+  color: $text-error;
+}
+
+.background-success {
+  background: $background-success;
+}
+
+.background-notice {
+  background: $background-notice;
+}
+
+.background-alert {
+  background: $background-alert;
+}
+
+.background-error {
+  background: $background-error;
+}
+
+.border-success {
+  border: 1px solid $border-success;
+}
+
+.border-notice {
+  border: 1px solid $border-notice;
+}
+
+.border-alert {
+  border: 1px solid $border-alert;
+}
+
+.border-error {
+  border: 1px solid $border-error;
+}
+
+@each $type in (success notice alert error) {
+  .#{$type}-box {
+    @extend .text-#{$type};
+    @extend .background-#{$type};
+    @extend .border-#{$type};
+    padding: 0.5em 1em;
+  }
+}
+
+.text-muted {
+  color: $text-muted;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

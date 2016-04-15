@@ -1,7 +1,7 @@
 var PureAdmin = PureAdmin || {};
 
 PureAdmin.mainMenu = {
-  scroll: function(element) {
+  scroll: function(element, clickedEl) {
     var menu = element.find('> nav');
     var menuList = menu.find('> .pure-menu-list');
 
@@ -9,7 +9,7 @@ PureAdmin.mainMenu = {
     if ( menuList.width() < $(document).width() ) return;
 
     // determine which scroll button was clicked
-    var direction = $(event.target).closest('.fade-left, .fade-right').data('direction');
+    var direction = clickedEl.closest('.fade-left, .fade-right').data('direction');
 
     // determine how far to scroll each click and the extremes of scrolling
     var maxOffset = menuList.width() - $(document).width();
@@ -79,11 +79,11 @@ $('document').ready(function() {
   PureAdmin.mainMenu.updateArrows($('#main-menu'));
 
   $('*[rel=main-menu-scroll]').on('click', function(event) {
-    PureAdmin.mainMenu.scroll($('#main-menu'));
+    PureAdmin.mainMenu.scroll($('#main-menu'), $(event.target));
   });
 
   $('*[rel=sub-menu-scroll]').on('click', function(event) {
-    PureAdmin.mainMenu.scroll($('#sub-menu'));
+    PureAdmin.mainMenu.scroll($('#sub-menu'), $(event.target));
   });
 
   $('#main-menu nav').on('scroll', function(event) {

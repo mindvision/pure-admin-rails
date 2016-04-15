@@ -9,6 +9,10 @@
     border-radius: 0;
     height: 2.5em !important;
 
+    .control-group-with-error & {
+      border-color: #ee5f5b;
+    }
+
     &:focus {
       outline: 0;
     }
@@ -58,6 +62,10 @@
     }
 
     .select2-results {
+      .select2-results__options {
+        max-height: 200px;
+        overflow-y: auto;
+      }
       .select2-results__option {
         white-space: nowrap;
         overflow: hidden;

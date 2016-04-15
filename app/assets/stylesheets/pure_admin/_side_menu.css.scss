@@ -68,3 +68,26 @@
   padding-top: 2px;
   padding-bottom: 1px;
 }
+
+// TODO: revisit these styles and possibly use the above styles instead (and just drop these)
+.pure-menu.menu-sidebar {
+  background: $grey-light;
+  border: 1px solid $grey-medium;
+
+  .pure-menu-item {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $grey-medium;
+    }
+
+    &.current {
+      .pure-menu-link {
+        color: $link-color;
+      }
+    }
+  }
+
+  .pure-menu-link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

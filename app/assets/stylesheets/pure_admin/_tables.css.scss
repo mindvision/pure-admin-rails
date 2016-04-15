@@ -16,16 +16,18 @@
 
   td {
     padding: 0.4em 1em;
-  }
-}
 
-.pure-table-striped {
-  tr:nth-child(2n-1) td {
-    background-color: transparent;
-  }
+    &.group {
+      background-color: $grey-medium !important;
+      font-weight: bold;
+    }
 
-  tr:nth-child(even) td {
-    background-color: #f6f6f6;
+    &.minimal {
+      width: 1px;
+      white-space: nowrap;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
   }
 }
 
