@@ -3,16 +3,19 @@
 class PureAdmin::ScaffoldGenerator < Rails::Generators::NamedBase
   desc 'This generator creates a controller and simple partials for the given model'
   source_root File.expand_path('../templates', __FILE__)
+  class_option :quickedits, type: :boolean, default: false,
+  desc: 'Includes Quick Edit for the controller'
 
   def copy_controller
-    copy_file 'models_controller.rb', controller_path
+    file_to_copy = options[:quickedits] ? 'models_quickedit_controller.rb' : 'models_controller.rb'
+    copy_file file_to_copy, controller_path
 
+    gsub_file(controller_path, /ModelClassNameReadable/, model_class_title)
+    gsub_file(controller_path, /ModelClassTitlePlural/, model_class_heading)
     gsub_file(controller_path, /ModelClassNamePlural/, model_class_name_plural)
     gsub_file(controller_path, /ModelClassName/, model_class_name)
     gsub_file(controller_path, /model_instance_collection/, model_instance_collection)
     gsub_file(controller_path, /model_instance_singular/, model_instance_singular)
-    gsub_file(controller_path, /ModelClassNameReadable/, model_class_title)
-    gsub_file(controller_path, /ModelClassTitlePlural/, model_class_heading)
   end
 
   def copy_table
@@ -51,7 +54,7 @@ class PureAdmin::ScaffoldGenerator < Rails::Generators::NamedBase
     end
 
     def model_class_title
-      model_instance_collection.titleize
+      model_instance_collection.titleize.singularize
     end
 
     def model_class_heading

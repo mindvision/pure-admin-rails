@@ -4,6 +4,9 @@ Description:
 Example:
     rails generate pure_admin:scaffold [MODEL_NAME]
 
+    If you want quickedits for the controller use:
+    rails generate pure_admin:scaffold [MODEL_NAME] --quickedits
+
     This will create:
         app/views/{pluralised model name}/_table.html.erb
         app/views/{pluralised model name}/_show.html.erb
