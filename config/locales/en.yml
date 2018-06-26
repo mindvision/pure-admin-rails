@@ -1,3 +1,4 @@
+# Only useful if kaminari is being used
 en:
   views:
     pagination:
